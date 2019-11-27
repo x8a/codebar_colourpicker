@@ -10,6 +10,9 @@ $(document).on('click', '#add-to-favorite', function () {
     addBox($('#color').val());
     setPreviewColor('');
     $('#color').focus().val('');
+    if($("#colors .item").length > 16) {
+        $("#colors .item").last().remove();
+    }
 });
 
 $(document).on('keydown', '#color', function (e) {
@@ -18,6 +21,9 @@ $(document).on('keydown', '#color', function (e) {
         addBox($('#color').val());
         setPreviewColor('');
         $('#color').focus().val('');
+    }
+    if($("#colors .item").length > 16) {
+        $("#colors .item").last().remove();
     }
    });
    
